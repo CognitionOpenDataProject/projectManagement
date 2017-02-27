@@ -48,6 +48,9 @@ coderRequest <- function(batchSize, thisCoder){
   
   # 6. Output .csv file containing batch of article ids to send to coder
   filename <- paste0("codingBatches/", thisCoder, "_", format(Sys.time(), "%d-%b_%H-%M-%S"), "_batch", ".csv")
-  write.csv(data.frame(articleID = thisBatch), filename, row.names = F)
+  coderInfo <- articlesData %>%
+    filter(id %in% thisBatch) %>%
+    select(id, authors, title, doi)
+  write.csv(coderInfo, filename, row.names = F)
   print(paste0('Now e-mail the .csv file ', filename, ' to the coder.'))
 }
