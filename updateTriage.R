@@ -40,17 +40,11 @@ updateTriage <- function(){
     filter(`Are the data understandable after brief review?` == "Yes") %>%
     pull(`Article ID:`)
   
-  # throw an error if no articles ready for triage
-  if(!(length(forTriage) > 0)) stop('No articles to pass to triage!')
-  
   # 5. For these available and reusable ids, identify which ones have not already been passed to triage
   forTriageNew <- articles_mod %>%
     filter(id %in% forTriage & passToTriage != "TRUE") %>%
     pull(id)
-  
-  # throw an error if no articles ready for triage
-  if(!(length(forTriageNew) > 0)) stop('No new articles to pass to triage!')
-  
+
   # 6. For forTriageNew ids , update 'passToTriage' column in Articles sheet to TRUE.
   
   # first make changes
@@ -64,5 +58,6 @@ updateTriage <- function(){
   gs_upload("articles_mod.csv", sheet_title = 'Articles', overwrite = TRUE)
   
   # Notify user of changes
+  print(paste(length(coded), " coded articles detected"))
   print(paste("Triage updated with ", length(forTriageNew), " new articles"))
 }
