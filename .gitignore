@@ -40,3 +40,6 @@ packrat/lib*/
 
 # Googlesheets auth files
 .httr-oauth
+
+# temp file
+articles_mod.csv
