@@ -1,16 +1,16 @@
-"id","authors","title","doi"
-"wsHXi","de Hevia, MD; Addabbo, M; Nava, E; Croci, E; Girelli, L; Cassia, VM","Infants' detection of increasing numerical order comes before detection of decreasing number","http://doi.org/10.1016/j.cognition.2016.10.022"
-"FbXsO","Krist, H; Karl, K; Kruger, M","Contrasting preschoolers' verbal reasoning in an object-individuation task with young infants' preverbal feats","http://doi.org/10.1016/j.cognition.2016.09.008"
-"TvdWP","Lejarraga, T; Woike, JK; Hertwig, R","Description and experience: How experimental investors learn about booms and busts affects their financial risk taking","http://doi.org/10.1016/j.cognition.2016.10.001"
-"uKwTk","Horner, AJ; Bisby, JA; Wang, AJ; Bogus, K; Burgess, N","The role of spatial boundaries in shaping long-term event representations","http://doi.org/10.1016/j.cognition.2016.05.013"
-"HFVKE","Bhatia, S; Walasek, L","Event construal and temporal distance in natural language","http://doi.org/10.1016/j.cognition.2016.03.011"
-"NoMcC","Maister, L; Tsakiris, M","Intimate imitation: Automatic motor imitation in romantic relationships","http://doi.org/10.1016/j.cognition.2016.03.018"
-"bPQsF","Miller, HE; Patterson, R; Simmering, VR","Language supports young children's use of spatial relations to remember locations","http://doi.org/10.1016/j.cognition.2016.02.006"
-"avKDB","Rabovsky, M; Schad, DJ; Rahman, RA","Language production is facilitated by semantic richness but inhibited by semantic density: Evidence from picture naming","http://doi.org/10.1016/j.cognition.2015.09.016"
-"APzhL","Perez-Zapata, D; Slaughter, V; Henry, JD","Cultural effects on mindreading","http://doi.org/10.1016/j.cognition.2015.10.018"
-"LYHnr","Cooper, JA; Marsh, JK","The influence of expertise on essence beliefs for mental and medical disorder categories","http://doi.org/10.1016/j.cognition.2015.07.016"
-"dlHGQ","Capizzi, M; Correa, A; Wojtowicz, A; Rafal, RD","Foreperiod priming in temporal preparation: Testing current models of sequential effects","http://doi.org/10.1016/j.cognition.2014.09.002"
-"UzDIz","Lindeman, M; Svedholm-Hakkinen, AM; Lipsanen, J","Ontological confusions but not mentalizing abilities predict religious belief, paranormal belief, and belief in supernatural purpose","http://doi.org/10.1016/j.cognition.2014.09.008"
-"MSqaT","Myllyneva, A; Hietanen, JK","There is more to eye contact than meets the eye","http://doi.org/10.1016/j.cognition.2014.09.011"
-"VumOW","van Dijk, L; Withagen, R; Bongers, RM","Information without content: A Gibsonian reply to enactivists' worries","http://doi.org/10.1016/j.cognition.2014.10.012"
-"hKEto","Blanchard, TC; Wolfe, LS; Vlaev, I; Winston, JS; Hayden, BY","Biases in preferences for sequences of outcomes in monkeys","http://doi.org/10.1016/j.cognition.2013.11.012"
+id,authors,title,doi,
+wsHXi,"de Hevia, MD; Addabbo, M; Nava, E; Croci, E; Girelli, L; Cassia, VM",Infants' detection of increasing numerical order comes before detection of decreasing number,http://doi.org/10.1016/j.cognition.2016.10.022,done
+FbXsO,"Krist, H; Karl, K; Kruger, M",Contrasting preschoolers' verbal reasoning in an object-individuation task with young infants' preverbal feats,http://doi.org/10.1016/j.cognition.2016.09.008,done
+TvdWP,"Lejarraga, T; Woike, JK; Hertwig, R",Description and experience: How experimental investors learn about booms and busts affects their financial risk taking,http://doi.org/10.1016/j.cognition.2016.10.001,done
+uKwTk,"Horner, AJ; Bisby, JA; Wang, AJ; Bogus, K; Burgess, N",The role of spatial boundaries in shaping long-term event representations,http://doi.org/10.1016/j.cognition.2016.05.013,
+HFVKE,"Bhatia, S; Walasek, L",Event construal and temporal distance in natural language,http://doi.org/10.1016/j.cognition.2016.03.011,
+NoMcC,"Maister, L; Tsakiris, M",Intimate imitation: Automatic motor imitation in romantic relationships,http://doi.org/10.1016/j.cognition.2016.03.018,
+bPQsF,"Miller, HE; Patterson, R; Simmering, VR",Language supports young children's use of spatial relations to remember locations,http://doi.org/10.1016/j.cognition.2016.02.006,
+avKDB,"Rabovsky, M; Schad, DJ; Rahman, RA",Language production is facilitated by semantic richness but inhibited by semantic density: Evidence from picture naming,http://doi.org/10.1016/j.cognition.2015.09.016,
+APzhL,"Perez-Zapata, D; Slaughter, V; Henry, JD",Cultural effects on mindreading,http://doi.org/10.1016/j.cognition.2015.10.018,
+LYHnr,"Cooper, JA; Marsh, JK",The influence of expertise on essence beliefs for mental and medical disorder categories,http://doi.org/10.1016/j.cognition.2015.07.016,
+dlHGQ,"Capizzi, M; Correa, A; Wojtowicz, A; Rafal, RD",Foreperiod priming in temporal preparation: Testing current models of sequential effects,http://doi.org/10.1016/j.cognition.2014.09.002,
+UzDIz,"Lindeman, M; Svedholm-Hakkinen, AM; Lipsanen, J","Ontological confusions but not mentalizing abilities predict religious belief, paranormal belief, and belief in supernatural purpose",http://doi.org/10.1016/j.cognition.2014.09.008,
+MSqaT,"Myllyneva, A; Hietanen, JK",There is more to eye contact than meets the eye,http://doi.org/10.1016/j.cognition.2014.09.011,
+VumOW,"van Dijk, L; Withagen, R; Bongers, RM",Information without content: A Gibsonian reply to enactivists' worries,http://doi.org/10.1016/j.cognition.2014.10.012,
+hKEto,"Blanchard, TC; Wolfe, LS; Vlaev, I; Winston, JS; Hayden, BY",Biases in preferences for sequences of outcomes in monkeys,http://doi.org/10.1016/j.cognition.2013.11.012,
