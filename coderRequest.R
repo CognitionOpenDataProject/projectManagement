@@ -43,8 +43,8 @@ coderRequest <- function(batchSize, thisCoder){
   # now write new csv file
   write.csv(articles_mod, 'articles_mod.csv', row.names = F)
   
-  # now upload csv and overwrite old sheet
-  gs_upload("articles_mod.csv", sheet_title = 'Articles', overwrite = TRUE)
+  # now remove old sheet and upload new sheet
+  gs_upload("articles_mod.csv", sheet_title = 'Articles', overwrite = T)
   
   # 6. Output .csv file containing batch of article ids to send to coder
   filename <- paste0("codingBatches/", thisCoder, "_", format(Sys.time(), "%d-%b_%H-%M-%S"), "_batch", ".csv")
