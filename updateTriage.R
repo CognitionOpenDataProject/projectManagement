@@ -35,7 +35,7 @@ updateTriage <- function(){
   
   # 4. Find ids that were classified 'available' and 'usuable' in Coding sheet.
   forTriage <- codingData %>%
-    filter(`Were you able to successfully download and open the data file?` == "Yes") %>%
+    filter(`Were you able to successfully download and open the data file(s)?` == "Yes") %>%
     filter(`Does all of the data needed for evaluation and reproduction of the research appear to be available after brief review?` == "Yes, all of the data appear to be available") %>%
     filter(`Are the data understandable after brief review?` == "Yes") %>%
     pull(`Article ID:`)
