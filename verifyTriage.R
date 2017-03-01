@@ -38,7 +38,7 @@ verifyTriage <- function(thisID, decision){
   
   # 3. Reminder user to request verification from another project lead.
   if(decision == 'verified'){
-    print('Article moved to reproducibility pool.').
+    print('Article moved to reproducibility pool.')
   }else if(decision == 'rejected'){
     print('AThis article has been rejected and will not pass to the reproducibility pool')
   }
