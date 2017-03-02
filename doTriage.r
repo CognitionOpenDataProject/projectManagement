@@ -38,7 +38,7 @@ doTriage <- function(){
   print(paste("Please set up a repo for this article ID: ", thisID))
   print(paste("The article doi is: ", doi))
   print("The repo should contain the article pdf, targetOutcomes.md, and data file(s)")
-  browseURL(paste("https://doi.org/", doi))
+  browseURL(doi)
   
   # 4. User manually downloads article and data.
   # 5. User manually identifies target outcomes and writes targetOutcomes.md
