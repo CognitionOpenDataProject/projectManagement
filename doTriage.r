@@ -49,13 +49,14 @@ doTriage <- function(){
   
   if(!(resp == 'y' | resp == 'n')) stop('User aborted triage!')
   
-  # 8. If 'y' then update 'triageStatus' to 'pendingVerification' for this id. 
+  # 8. If 'y' then update 'triageStatus' to 'accepted' and reproducibility status to 'inPool' for this id.
   # 8. If 'n' then update 'triageStatus' to 'rejected' for this id. 
   
   # first make changes
   if(resp == 'y'){
     articles_mod <- articlesData %>%
-      mutate(triageStatus = ifelse(id == thisID, 'pendingVerification', triageStatus))
+      mutate(triageStatus = ifelse(id == thisID, 'accepted', triageStatus),
+             reproducibilityStatus = ifelse(id == thisID, 'inPool', reproducibilityStatus))
   }else if(resp == 'n'){
     articles_mod <- articlesData %>%
       mutate(triageStatus = ifelse(id == thisID, 'rejected', triageStatus))
@@ -69,7 +70,7 @@ doTriage <- function(){
   
   # 9. Reminder user to request verification from another project lead.
   if(resp == 'y'){
-    print(paste("Triage outcome for article id ", thisID, " is now pending verification. Please send id to project lead."))
+    print(paste("Article id ", thisID, " is now in the reproducibility pool."))
   }else if(resp == 'n'){
     print("This article has been rejected and will not pass to the reproducibility pool.")
   }
