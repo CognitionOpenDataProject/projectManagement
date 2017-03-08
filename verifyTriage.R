@@ -40,6 +40,6 @@ verifyTriage <- function(thisID, decision){
   if(decision == 'verified'){
     print('Article moved to reproducibility pool.')
   }else if(decision == 'rejected'){
-    print('AThis article has been rejected and will not pass to the reproducibility pool')
+    print('This article has been rejected and will not pass to the reproducibility pool')
   }
 }
