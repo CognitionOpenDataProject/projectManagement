@@ -36,7 +36,7 @@ verifyTriage <- function(thisID, decision){
   # now upload csv and overwrite old sheet
   gs_upload("articles_mod.csv", sheet_title = 'Articles', overwrite = TRUE)
   
-  # 3. Reminder user to request verification from another project lead.
+  # 3. Inform user of action
   if(decision == 'verified'){
     print('Article moved to reproducibility pool.')
   }else if(decision == 'rejected'){
