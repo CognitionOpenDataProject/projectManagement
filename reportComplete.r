@@ -1,5 +1,5 @@
 # EVENT: Pilot and copilot complete final report and make pull request
-# 1. Address any obvious questions or issues. Check pilotReport.Rmd, pilotReport.csv, finalReport.Rmd and finalReport.csv are present. If ok, merge the fork on Github.
+# 1. Address any obvious questions or issues. Check pilotReport.Rmd, pilotReport.csv, jointReport.Rmd and jointReport.csv are present. If ok, merge the fork on Github.
 # 2. Download Articles sheet and extract data
 # 3. Update reproducibilityStatus column for this id to 'complete'
 
