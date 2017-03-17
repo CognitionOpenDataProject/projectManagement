@@ -27,7 +27,7 @@ reportComplete <- function(articleID){
   
   # first make changes
   articles_mod <- articlesData %>%
-    mutate(reproducibilityStatus = ifelse(id == articleID, 'copiloting', reproducibilityStatus))
+    mutate(reproducibilityStatus = ifelse(id == articleID, 'complete', reproducibilityStatus))
   
   # now write new csv file
   write.csv(articles_mod, 'articles_mod.csv', row.names = F)
@@ -36,5 +36,5 @@ reportComplete <- function(articleID){
   gs_upload("articles_mod.csv", sheet_title = 'Articles', overwrite = TRUE)
   
   # 5. Print article id to send to copilot
-  print(paste0('Now e-mail the this article ID ', articleID, ' to the copilot.'))
+  print(paste0(articleID, ' is complete!'))
 }
