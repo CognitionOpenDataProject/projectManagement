@@ -24,6 +24,9 @@ statusUpdate <- function(){
            availabilitySuccess = `Were you able to successfully download and open the data file(s)?`,
            understandable = `Are the data understandable after brief review?`) %>%
     mutate(date = as.Date(date, format='%m/%d/%Y'),
+           month = format(date, '%m'),
+           year = format(date, '%Y'),
+           period = ifelse(as.numeric(month) <= 6, 1, 2),
            policy = ifelse(date >= "2015-01-03", "POST-", "PRE-"),
            policy = factor(policy, levels = c("PRE-", "POST-")),
            availabilityStatement = recode_factor(availabilityStatement, "Yes - the statement says that the data (or some of the data) are available" = "Yes",
@@ -37,9 +40,39 @@ statusUpdate <- function(){
     summarise(n = n()) %>%
     complete(availabilityStatement, fill = list(n = 0)) %>%
     ggplot() + geom_bar(aes(x = policy, y = n, fill = availabilityStatement), stat = "identity", position=position_dodge()) +
-    ylim(0,200) +
+    ylim(0,300) +
     theme_minimal() +
     scale_fill_manual(values=c("#009E73", "#E69F00", "#CC6666"))
+  
+  tmp <- codingData %>%
+    mutate(period = factor(period),
+           year = factor(year),
+           policy = factor(policy)) %>%
+    unite(time_period, year, period) %>%
+    group_by(availabilityStatement, time_period) %>%
+    summarise(n = n()) %>%
+    complete(time_period, fill = list(n = 0))
+  
+  graph_availableStatement_timeline <- tmp %>%
+    group_by(time_period) %>%
+    mutate(prop = n / sum(n)) %>%
+    filter(availabilityStatement == 'Yes') %>%
+    ungroup() %>%
+    select(time_period, prop) %>%
+    ggplot() + geom_point(aes(x = time_period, y = prop)) + 
+    geom_line(aes(x = time_period, y = prop, group = 1)) +
+    theme_minimal() +
+    geom_vline(xintercept = which(tmp$time_period == '2015_1'), color = 'red', linetype = 'dashed')
+    
+  graph_availableStatement_areaPlot <- tmp %>%
+    select(availabilityStatement, time_period, n) %>%
+    ggplot() + geom_area(aes(x = time_period, y = n, colour = availabilityStatement, fill= availabilityStatement), position = 'stack', size = 3) +
+    theme_minimal() +
+    geom_vline(xintercept = which(tmp$time_period == '2015_1'), color = 'red', linetype = 'dashed') +
+    scale_color_manual(values=c("#009E73", "#CC6666")) +
+    scale_fill_manual(values=c("#009E73", "#CC6666"))
+    
+
     
   availableStatementN <- table(codingData$availabilityStatement)[['Yes']]
   
@@ -70,8 +103,14 @@ statusUpdate <- function(){
       ggtitle(paste0("For articles (", availableSuccessN  ,") with availability success..")) +
       scale_fill_manual(values=c("#009E73", "#E69F00", "#CC6666"))
   
+  # individual coders
+  codingDataRaw %>%
+    group_by(`Coder initials:`) %>%
+    summarise(n()) %>%
+    print()
   
   print(graph_availableStatement)
+  print(graph_availableStatement_timeline)
   print(graph_availableSuccess)
   print(graph_understand)
 
