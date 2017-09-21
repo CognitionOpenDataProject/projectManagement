@@ -43,3 +43,6 @@ packrat/lib*/
 
 # temp file
 articles_mod.csv
+
+# author points file
+authorPoints.xlsx

@@ -44,6 +44,7 @@ statusUpdate <- function(){
     theme_minimal() +
     scale_fill_manual(values=c("#009E73", "#E69F00", "#CC6666"))
   
+  ## Timeline by year half
   tmp <- codingData %>%
     mutate(period = factor(period),
            year = factor(year),
@@ -71,7 +72,20 @@ statusUpdate <- function(){
     geom_vline(xintercept = which(tmp$time_period == '2015_1'), color = 'red', linetype = 'dashed') +
     scale_color_manual(values=c("#009E73", "#CC6666")) +
     scale_fill_manual(values=c("#009E73", "#CC6666"))
-    
+  
+  ### timeline relative to policy introduction
+  relTime <- codingData %>%
+    mutate(daysSincePolicy = as.numeric(date - as.Date("2015-01-03")),
+           timeBlock = ifelse(daysSincePolicy >= 0 & daysSincePolicy <250, 1, 
+                              ifelse(daysSincePolicy >= 250 & daysSincePolicy <500, 2,
+                                    ifelse(daysSincePolicy >= 500 & daysSincePolicy <750, 3,
+                                           ifelse(daysSincePolicy >= 750 & daysSincePolicy <1000, 4,
+                                                  ifelse(daysSincePolicy >= 1000 & daysSincePolicy <1250, 5,
+                                                         ifelse(daysSincePolicy < 0 & daysSincePolicy >=-250, -1,
+                                                                ifelse(daysSincePolicy < -250 & daysSincePolicy >= -500, -2,
+                                                                       ifelse(daysSincePolicy <500 & daysSincePolicy >= -750, -3,
+                                                                              ifelse(daysSincePolicy < 750 & daysSincePolicy >= 1000, -4,
+                                                                                     ifelse(daysSincePolicy < 1000 & daysSincePolicy >= 1250, -5, "NA")))))))))))
 
     
   availableStatementN <- table(codingData$availabilityStatement)[['Yes']]
@@ -104,10 +118,21 @@ statusUpdate <- function(){
       scale_fill_manual(values=c("#009E73", "#E69F00", "#CC6666"))
   
   # individual coders
-  codingDataRaw %>%
-    group_by(`Coder initials:`) %>%
-    summarise(n()) %>%
-    print()
+  coders <- articlesData %>%
+    group_by(coder) %>%
+    count()
+  # individual pilots
+  pilots <- articlesData %>%
+    filter(triageStatus == 'accepted') %>%
+    group_by(pilot) %>%
+    count()
+  
+  # individual copilots
+  copilots <- articlesData %>%
+    filter(triageStatus == 'accepted') %>%
+    group_by(copilot) %>%
+    count()
+  
   
   print(graph_availableStatement)
   print(graph_availableStatement_timeline)
